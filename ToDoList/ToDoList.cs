@@ -1,5 +1,6 @@
 using System.Data;
 using System.Data.SqlClient;
+using Microsoft.Extensions.Configuration;
 
 namespace ToDoList
 {
@@ -82,7 +83,7 @@ namespace ToDoList
 
         private void OpenDbConnection()
         {
-            string myDbPathOnDisk = @"D:\HillelItSchool\Homeworks\5-TODOlist\ToDoList\";
+            var myDbPathOnDisk = Program.Configuration.GetSection("MainSettings:LocalPathToTheDatabaseFilesFolder").Value;
             cn = new SqlConnection($@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename={myDbPathOnDisk}Database.mdf;Integrated Security=True");
             cn.Open();
         }
