@@ -1,2 +1,2 @@
-# firstWinFormsProject
-ДЗ 6. Перший WinForms проект
+# ДЗ 6. Перший WinForms проект
+Simple TODO list on WinForms
